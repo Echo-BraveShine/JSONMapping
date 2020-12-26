@@ -35,8 +35,7 @@ struct ContentView: View {
                     VStack.init(alignment: .center, spacing: 0, content: {
                         Text("请输入JSON")
                             .padding(.all, 10)
-                        
-                        TextView.init(text: $inputText)
+                        TextEditor.init(text: $inputText)
                     }).frame(width: proxy.size.width * 0.4, height: proxy.size.height, alignment: .top)
                     
                     
@@ -80,7 +79,7 @@ struct ContentView: View {
                         Text("转换后")
                             .padding(.all, 10)
                         VStack.init {
-                            OutputTextView.init(text: $outputText)
+                            TextEditor.init(text: $outputText)
                         }
                         .background(Color.white)
                         .frame(width: nil, height: nil, alignment: .top)

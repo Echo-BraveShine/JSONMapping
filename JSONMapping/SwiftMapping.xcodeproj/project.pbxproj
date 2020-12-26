@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,22 +12,21 @@
 		5FF8FC9D252AD0B900467BF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FF8FC9C252AD0B900467BF8 /* Assets.xcassets */; };
 		5FF8FCA0252AD0B900467BF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FF8FC9F252AD0B900467BF8 /* Preview Assets.xcassets */; };
 		5FF8FCA3252AD0B900467BF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FF8FCA1252AD0B900467BF8 /* Main.storyboard */; };
-		5FF8FCB2252AD2D000467BF8 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF8FCB1252AD2D000467BF8 /* TextView.swift */; };
-		8226D273333AC5B66E0EA077 /* Pods_JSONMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A422DE3F76248244AA5E2DA /* Pods_JSONMapping.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5FF8FC95252AD0B800467BF8 /* JSONMapping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONMapping.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3799EEF36C959798CD8C7D69 /* Pods-SwiftMapping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMapping.release.xcconfig"; path = "Target Support Files/Pods-SwiftMapping/Pods-SwiftMapping.release.xcconfig"; sourceTree = "<group>"; };
+		5FF8FC95252AD0B800467BF8 /* SwiftMapping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMapping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF8FC98252AD0B800467BF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FF8FC9A252AD0B800467BF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5FF8FC9C252AD0B900467BF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FF8FC9F252AD0B900467BF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5FF8FCA2252AD0B900467BF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5FF8FCA4252AD0B900467BF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FF8FCA5252AD0B900467BF8 /* JSONMapping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JSONMapping.entitlements; sourceTree = "<group>"; };
-		5FF8FCB1252AD2D000467BF8 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		5FF8FCA5252AD0B900467BF8 /* SwiftMapping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftMapping.entitlements; sourceTree = "<group>"; };
 		698185D19782BD4D2B6AC499 /* Pods-JSONMapping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONMapping.release.xcconfig"; path = "Target Support Files/Pods-JSONMapping/Pods-JSONMapping.release.xcconfig"; sourceTree = "<group>"; };
-		8A422DE3F76248244AA5E2DA /* Pods_JSONMapping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONMapping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A9611A0E6F2625B2216B153 /* Pods_SwiftMapping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMapping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AE8A38E62AA4828D2EC8402 /* Pods-SwiftMapping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMapping.debug.xcconfig"; path = "Target Support Files/Pods-SwiftMapping/Pods-SwiftMapping.debug.xcconfig"; sourceTree = "<group>"; };
 		BD80803D9B8FABF073DE1F43 /* Pods-JSONMapping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONMapping.debug.xcconfig"; path = "Target Support Files/Pods-JSONMapping/Pods-JSONMapping.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -36,7 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8226D273333AC5B66E0EA077 /* Pods_JSONMapping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,7 +44,7 @@
 		5FF8FC8C252AD0B700467BF8 = {
 			isa = PBXGroup;
 			children = (
-				5FF8FC97252AD0B800467BF8 /* JSONMapping */,
+				5FF8FC97252AD0B800467BF8 /* SwiftMapping */,
 				5FF8FC96252AD0B800467BF8 /* Products */,
 				7A9817E3CE5D59FA910BE926 /* Pods */,
 				8682B497DC6793D8211A71F1 /* Frameworks */,
@@ -56,24 +54,23 @@
 		5FF8FC96252AD0B800467BF8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5FF8FC95252AD0B800467BF8 /* JSONMapping.app */,
+				5FF8FC95252AD0B800467BF8 /* SwiftMapping.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5FF8FC97252AD0B800467BF8 /* JSONMapping */ = {
+		5FF8FC97252AD0B800467BF8 /* SwiftMapping */ = {
 			isa = PBXGroup;
 			children = (
-				5FF8FCB1252AD2D000467BF8 /* TextView.swift */,
+				5FF8FCA5252AD0B900467BF8 /* SwiftMapping.entitlements */,
 				5FF8FC98252AD0B800467BF8 /* AppDelegate.swift */,
 				5FF8FC9A252AD0B800467BF8 /* ContentView.swift */,
 				5FF8FC9C252AD0B900467BF8 /* Assets.xcassets */,
 				5FF8FCA1252AD0B900467BF8 /* Main.storyboard */,
 				5FF8FCA4252AD0B900467BF8 /* Info.plist */,
-				5FF8FCA5252AD0B900467BF8 /* JSONMapping.entitlements */,
 				5FF8FC9E252AD0B900467BF8 /* Preview Content */,
 			);
-			path = JSONMapping;
+			path = SwiftMapping;
 			sourceTree = "<group>";
 		};
 		5FF8FC9E252AD0B900467BF8 /* Preview Content */ = {
@@ -89,6 +86,8 @@
 			children = (
 				BD80803D9B8FABF073DE1F43 /* Pods-JSONMapping.debug.xcconfig */,
 				698185D19782BD4D2B6AC499 /* Pods-JSONMapping.release.xcconfig */,
+				9AE8A38E62AA4828D2EC8402 /* Pods-SwiftMapping.debug.xcconfig */,
+				3799EEF36C959798CD8C7D69 /* Pods-SwiftMapping.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -96,7 +95,7 @@
 		8682B497DC6793D8211A71F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8A422DE3F76248244AA5E2DA /* Pods_JSONMapping.framework */,
+				9A9611A0E6F2625B2216B153 /* Pods_SwiftMapping.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,22 +103,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5FF8FC94252AD0B700467BF8 /* JSONMapping */ = {
+		5FF8FC94252AD0B700467BF8 /* SwiftMapping */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5FF8FCA8252AD0B900467BF8 /* Build configuration list for PBXNativeTarget "JSONMapping" */;
+			buildConfigurationList = 5FF8FCA8252AD0B900467BF8 /* Build configuration list for PBXNativeTarget "SwiftMapping" */;
 			buildPhases = (
 				AEEC14436FA0E5A81FF47F55 /* [CP] Check Pods Manifest.lock */,
 				5FF8FC91252AD0B700467BF8 /* Sources */,
 				5FF8FC92252AD0B700467BF8 /* Frameworks */,
 				5FF8FC93252AD0B700467BF8 /* Resources */,
+				5F428B23259723020079F1E5 /* AutoBuildVersion */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = JSONMapping;
+			name = SwiftMapping;
 			productName = JSONMapping;
-			productReference = 5FF8FC95252AD0B800467BF8 /* JSONMapping.app */;
+			productReference = 5FF8FC95252AD0B800467BF8 /* SwiftMapping.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -129,14 +129,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					5FF8FC94252AD0B700467BF8 = {
 						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
-			buildConfigurationList = 5FF8FC90252AD0B700467BF8 /* Build configuration list for PBXProject "JSONMapping" */;
+			buildConfigurationList = 5FF8FC90252AD0B700467BF8 /* Build configuration list for PBXProject "SwiftMapping" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -149,7 +149,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5FF8FC94252AD0B700467BF8 /* JSONMapping */,
+				5FF8FC94252AD0B700467BF8 /* SwiftMapping */,
 			);
 		};
 /* End PBXProject section */
@@ -168,6 +168,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5F428B23259723020079F1E5 /* AutoBuildVersion */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = AutoBuildVersion;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuild_version=$(date +%y%m%d%H%M)\necho \"build_version${build_version}\"\n/usr/libexec/PlistBuddy -c \"Set CFBundleVersion ${build_version}\" ${INFOPLIST_FILE}\n";
+		};
 		AEEC14436FA0E5A81FF47F55 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,7 +202,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JSONMapping-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SwiftMapping-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -197,7 +216,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FF8FCB2252AD2D000467BF8 /* TextView.swift in Sources */,
 				5FF8FC9B252AD0B800467BF8 /* ContentView.swift in Sources */,
 				5FF8FC99252AD0B800467BF8 /* AppDelegate.swift in Sources */,
 			);
@@ -334,50 +352,56 @@
 		};
 		5FF8FCA9252AD0B900467BF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD80803D9B8FABF073DE1F43 /* Pods-JSONMapping.debug.xcconfig */;
+			baseConfigurationReference = 9AE8A38E62AA4828D2EC8402 /* Pods-SwiftMapping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = JSONMapping/JSONMapping.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SwiftMapping/SwiftMapping.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"JSONMapping/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftMapping/Preview Content\"";
 				DEVELOPMENT_TEAM = NV69G85YFB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = JSONMapping/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SwiftMapping/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = BraveShine.JSONMapping;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BraveShine.SwiftMapping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		5FF8FCAA252AD0B900467BF8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 698185D19782BD4D2B6AC499 /* Pods-JSONMapping.release.xcconfig */;
+			baseConfigurationReference = 3799EEF36C959798CD8C7D69 /* Pods-SwiftMapping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = JSONMapping/JSONMapping.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SwiftMapping/SwiftMapping.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"JSONMapping/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftMapping/Preview Content\"";
 				DEVELOPMENT_TEAM = NV69G85YFB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = JSONMapping/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SwiftMapping/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = BraveShine.JSONMapping;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BraveShine.SwiftMapping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -385,7 +409,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5FF8FC90252AD0B700467BF8 /* Build configuration list for PBXProject "JSONMapping" */ = {
+		5FF8FC90252AD0B700467BF8 /* Build configuration list for PBXProject "SwiftMapping" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FF8FCA6252AD0B900467BF8 /* Debug */,
@@ -394,7 +418,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5FF8FCA8252AD0B900467BF8 /* Build configuration list for PBXNativeTarget "JSONMapping" */ = {
+		5FF8FCA8252AD0B900467BF8 /* Build configuration list for PBXNativeTarget "SwiftMapping" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FF8FCA9252AD0B900467BF8 /* Debug */,

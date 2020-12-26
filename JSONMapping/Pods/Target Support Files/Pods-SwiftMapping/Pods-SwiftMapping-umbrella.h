@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_JSONMappingVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_JSONMappingVersionString[];
+FOUNDATION_EXPORT double Pods_SwiftMappingVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_SwiftMappingVersionString[];
 

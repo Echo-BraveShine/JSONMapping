@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C2139E1B017572ACB5CA190298CAB048"
-               BuildableName = "Pods_JSONMapping.framework"
-               BlueprintName = "Pods-JSONMapping"
+               BlueprintIdentifier = "BBC31D809FB9EF65BAFE68C4031BC4A5"
+               BuildableName = "Pods_SwiftMapping.framework"
+               BlueprintName = "Pods-SwiftMapping"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
