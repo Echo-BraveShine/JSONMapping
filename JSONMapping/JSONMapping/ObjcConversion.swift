@@ -24,7 +24,7 @@ class ObjcConversion {
             return s
             
         }
-        return "JSON格式不能解析"
+        return NSLocalizedString("The json text cannot be parsed", comment: "")
     }
 
     

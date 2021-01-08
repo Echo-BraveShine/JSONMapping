@@ -18,9 +18,9 @@ enum SwiftMappingType: String, CaseIterable,Identifiable {
     var desc: String{
         switch self {
         case .default:
-            return "默认"
+            return NSLocalizedString("Some", comment: "")
         case .optional:
-            return "可选"
+            return NSLocalizedString("None", comment: "")
         }
     }
 }
@@ -48,6 +48,7 @@ class ContentViewModel: ObservableObject {
     @Published var inputText: String = ""
     
     @Published var outputText: String = ""
+   
     @Published var type: SwiftMappingType = .default
     
     @Published var language : MappingLanguage = .swift
@@ -61,6 +62,10 @@ class ContentViewModel: ObservableObject {
     }
     
     func conversion(){
+        if inputText.count == 0 {
+            outputText = ""
+            return
+        }
         if language == .swift{
             let c = SwiftConversion()
             c.type = type
@@ -85,16 +90,16 @@ struct ContentView: View {
     var body: some View {
         VStack {
             GeometryReader.init { proxy in
-                let centerWidth : CGFloat = 200
+                let centerWidth : CGFloat = 150
                 let leftWidth : CGFloat = (proxy.size.width - centerWidth) / 2
                 let rightWidth : CGFloat = leftWidth
                 
                 HStack.init(alignment: .top, spacing: 0, content: {
                     VStack.init(alignment: .center, spacing: 0, content: {
-                        Text("请输入JSON")
+                        Text(NSLocalizedString("Please enter the json text", comment: ""))
                             .padding(.all, 10)
-                        
                         TextEditor.init(text: self.$viewModel.inputText)
+                        
                     }).frame(width: leftWidth, height: proxy.size.height, alignment: .top)
                     
                     
@@ -134,23 +139,28 @@ struct ContentView: View {
                         
                         Spacer()
                         
-                        HStack.init(alignment: .center, spacing: 10) {
+                        VStack.init(alignment: .center, spacing: 10) {
                             Button.init(action: {
                                 self.viewModel.format()
                             }, label: {
-                                Text("格式化")
+                                Text(NSLocalizedString("format", comment: ""))
+                                    .frame(width: centerWidth / 2, height: nil, alignment: .center)
                             })
                             Button.init(action: {
                                 self.viewModel.conversion()
                             }, label: {
-                                Text("转换")
+                                Text(NSLocalizedString("conversion", comment: ""))
+                                    .frame(width: centerWidth / 2, height: nil, alignment: .center)
+
                             })
                             Button.init(action: {
                                 let pboard = NSPasteboard.general
                                 pboard.declareTypes([.string], owner: nil)
                                 pboard.setString(viewModel.outputText, forType: .string)
                             }, label: {
-                                Text("复制")
+                                Text(NSLocalizedString("copy", comment: ""))
+                                    .frame(width: centerWidth / 2, height: nil, alignment: .center)
+
                             })
                         }
                         .padding(.bottom, 10)
@@ -158,7 +168,7 @@ struct ContentView: View {
                     }.frame(width: centerWidth, height: proxy.size.height, alignment: .top)
                     
                     VStack.init(alignment: .center, spacing: 0, content: {
-                        Text("转换后")
+                        Text(NSLocalizedString("results", comment: ""))
                             .padding(.all, 10)
                         VStack.init {
                             TextEditor.init(text: self.$viewModel.outputText)

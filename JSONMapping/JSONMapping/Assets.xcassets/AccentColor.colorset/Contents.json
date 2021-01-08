@@ -1,11 +1,7 @@
 {
   "colors" : [
     {
-      "color" : {
-        "platform" : "osx",
-        "reference" : "alternateSelectedControlTextColor"
-      },
-      "idiom" : "universal"
+      "idiom" : "mac"
     }
   ],
   "info" : {

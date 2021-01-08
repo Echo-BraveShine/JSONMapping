@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  JSONMapping
+
+  Created by BraveShine on 2021/1/8.
+  
+*/
+"Please enter the json text" = "请输入json文本";
+
+"format" = "格式化";
+
+"conversion" = "转换";
+
+"copy" = "复制";
+
+"results" = "结果";
+
+"The json text cannot be parsed" = "json文本不能解析";
+
+"Some" = "非可选";
+
+"None" = "可选";
