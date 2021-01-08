@@ -85,13 +85,17 @@ struct ContentView: View {
     var body: some View {
         VStack {
             GeometryReader.init { proxy in
+                let centerWidth : CGFloat = 200
+                let leftWidth : CGFloat = (proxy.size.width - centerWidth) / 2
+                let rightWidth : CGFloat = leftWidth
+                
                 HStack.init(alignment: .top, spacing: 0, content: {
                     VStack.init(alignment: .center, spacing: 0, content: {
                         Text("请输入JSON")
                             .padding(.all, 10)
                         
                         TextEditor.init(text: self.$viewModel.inputText)
-                    }).frame(width: proxy.size.width * 0.4, height: proxy.size.height, alignment: .top)
+                    }).frame(width: leftWidth, height: proxy.size.height, alignment: .top)
                     
                     
                     VStack.init(alignment: .center, spacing: 0) {
@@ -151,7 +155,7 @@ struct ContentView: View {
                         }
                         .padding(.bottom, 10)
                         
-                    }.frame(width: proxy.size.width * 0.2, height: proxy.size.height, alignment: .top)
+                    }.frame(width: centerWidth, height: proxy.size.height, alignment: .top)
                     
                     VStack.init(alignment: .center, spacing: 0, content: {
                         Text("转换后")
@@ -162,10 +166,11 @@ struct ContentView: View {
                         .background(Color.white)
                         .frame(width: nil, height: nil, alignment: .top)
                         
-                    }).frame(width: proxy.size.width * 0.4, height: proxy.size.height, alignment: .top)
+                    })
+                    .frame(width: rightWidth, height: proxy.size.height, alignment: .top)
                     
                 })
-            }
+            }.padding([.leading,.trailing,.bottom], 20)
             
         }
     }
