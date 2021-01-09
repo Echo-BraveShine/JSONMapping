@@ -51,8 +51,18 @@ class ContentViewModel: ObservableObject {
    
     @Published var type: SwiftMappingType = .default
     
-    @Published var language : MappingLanguage = .swift
+    @Published var language : MappingLanguage = .swift{
+        didSet{
+            if language == .swift{
+                textViewLanguage = .swift
+            }
+            if language == .objc{
+                textViewLanguage = .objc
+            }
+        }
+    }
     
+    @Published var textViewLanguage : TextViewLanguage = .swift
     
     func format() {
         var errors: [JSONParseError] = []
@@ -98,7 +108,8 @@ struct ContentView: View {
                     VStack.init(alignment: .center, spacing: 0, content: {
                         Text(NSLocalizedString("Please enter the json text", comment: ""))
                             .padding(.all, 10)
-                        TextEditor.init(text: self.$viewModel.inputText)
+//                        TextEditor.init(text: self.$viewModel.inputText)
+                        EditorTextView.init(text: self.$viewModel.inputText)
                         
                     }).frame(width: leftWidth, height: proxy.size.height, alignment: .top)
                     
@@ -171,7 +182,8 @@ struct ContentView: View {
                         Text(NSLocalizedString("results", comment: ""))
                             .padding(.all, 10)
                         VStack.init {
-                            TextEditor.init(text: self.$viewModel.outputText)
+//                            TextEditor.init(text: self.$viewModel.outputText)
+                            EditorTextView.init(text: self.$viewModel.outputText,language: self.viewModel.textViewLanguage)
                         }
                         .background(Color.white)
                         .frame(width: nil, height: nil, alignment: .top)

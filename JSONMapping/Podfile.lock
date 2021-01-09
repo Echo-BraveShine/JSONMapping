@@ -1,0 +1,16 @@
+PODS:
+  - Highlightr3 (3.0.3)
+
+DEPENDENCIES:
+  - Highlightr3
+
+SPEC REPOS:
+  trunk:
+    - Highlightr3
+
+SPEC CHECKSUMS:
+  Highlightr3: 7dc66a822503c90502ef2b7eb8e5eb98b6d91444
+
+PODFILE CHECKSUM: 9adba298407c6dea7ed27ca322780378a217ce31
+
+COCOAPODS: 1.10.1

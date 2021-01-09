@@ -1,0 +1,656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E1AB4292E94757AEF2BAE384F0FDF4 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2428C7A34D19A0958E5B2F7BBE991092 /* AppKit.framework */; };
+		0246CFD23D51E6EABCC9B1C3B633DDFE /* dracula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = B3238715A5EB41BDDFDA0C4070A37707 /* dracula.min.css */; };
+		042A5584B678E546B85216299A014249 /* darcula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = BD15E4960ECB6BBDDEEDAB37744E7252 /* darcula.min.css */; };
+		094D98AFB3C3A162814148F9EDC85181 /* Pods-JSONMapping-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7584A83E624A1FCA2F93FD4E7095999A /* Pods-JSONMapping-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F2746F45508B1686FF9214D387C5F98 /* Highlightr3-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DDBBC6EDE454363DADFC0CBC89D958 /* Highlightr3-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2ADDA3FC13FDAE176A5D889591377C7F /* solarized-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 4B41A03C45CE4670D64CF501FEB91FE9 /* solarized-dark.min.css */; };
+		46F4A1A218219D9ED80676F2D2DA3CD2 /* github.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 169BB0E7F4280F4B028EE798518E36CD /* github.min.css */; };
+		4944096F8E77776334370934DC402692 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16AD61F14D2068D73A393D965885F11 /* Cocoa.framework */; };
+		55514A4CE6ED0C7DAF694E81A8358A4F /* solarized-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = C9914663CD416276D591A22EFA272CC6 /* solarized-light.min.css */; };
+		7442569D0F95590918DD58A8B847E8B8 /* Pods-JSONMapping-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65280D761D1AF886000E0AB26D1C4A21 /* Pods-JSONMapping-dummy.m */; };
+		7B06C47679C8B66F41959B5FC3175A55 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A039DDA7F352432C7D6D297003BCFDA /* Theme.swift */; };
+		8AC5147DA7948894AFB3A2CAFC879F2A /* Highlightr3-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9077085788AC32D676C8D0E4D4A257 /* Highlightr3-dummy.m */; };
+		8CA9F252019686C21E045BDF0E5743F0 /* HighlightTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33C2842419B9628E18C25FD4CC4B67 /* HighlightTextStorage.swift */; };
+		91DAA4B8C3366405AD1A946D8296B37F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16AD61F14D2068D73A393D965885F11 /* Cocoa.framework */; };
+		B2D20505A46083727180E17AB870D8B0 /* Highlightr.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4227D28AE0B09C21E457E02ABFD18A /* Highlightr.swift */; };
+		B91BE6CCCD1484939F4154AB79509923 /* highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 809FCC9EE6BDC0AFC1EBAF1D482407BA /* highlight.js */; };
+		F5068B0D77DC5BEC934F722AE1ADEFBF /* atom-one-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 841398E1F2B9FA488258164F0EE81DD4 /* atom-one-dark.min.css */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		35198CFF3896B401943530DEE5ADA64A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DC8A3B828D9B0F91C62B0CC584FD74E;
+			remoteInfo = Highlightr3;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15CE25F397BD2E6192D9B15325462E78 /* Pods_JSONMapping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JSONMapping.framework; path = "Pods-JSONMapping.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		169BB0E7F4280F4B028EE798518E36CD /* github.min.css */ = {isa = PBXFileReference; includeInIndex = 1; name = github.min.css; path = Sources/Highlightr/Resources/Styles/github.min.css; sourceTree = "<group>"; };
+		1EF685E5DF0EB00591CDD2A6EE21B545 /* Highlightr3-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Highlightr3-prefix.pch"; sourceTree = "<group>"; };
+		2428C7A34D19A0958E5B2F7BBE991092 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
+		24DDBBC6EDE454363DADFC0CBC89D958 /* Highlightr3-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Highlightr3-umbrella.h"; sourceTree = "<group>"; };
+		3EEA818E1B328BD3ED1730AC06E2E37C /* Highlightr3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Highlightr3.framework; path = Highlightr3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B41A03C45CE4670D64CF501FEB91FE9 /* solarized-dark.min.css */ = {isa = PBXFileReference; includeInIndex = 1; name = "solarized-dark.min.css"; path = "Sources/Highlightr/Resources/Styles/solarized-dark.min.css"; sourceTree = "<group>"; };
+		5172EE712A9DE20BD8E8B7DB54ABEA46 /* Highlightr3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Highlightr3.debug.xcconfig; sourceTree = "<group>"; };
+		5C07392A6471A95E42945D016DBC2E2A /* Pods-JSONMapping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSONMapping.debug.xcconfig"; sourceTree = "<group>"; };
+		65280D761D1AF886000E0AB26D1C4A21 /* Pods-JSONMapping-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JSONMapping-dummy.m"; sourceTree = "<group>"; };
+		66D1DC0F26780A02B2593E58D2B76534 /* Pods-JSONMapping.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JSONMapping.modulemap"; sourceTree = "<group>"; };
+		7584A83E624A1FCA2F93FD4E7095999A /* Pods-JSONMapping-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JSONMapping-umbrella.h"; sourceTree = "<group>"; };
+		809FCC9EE6BDC0AFC1EBAF1D482407BA /* highlight.js */ = {isa = PBXFileReference; includeInIndex = 1; name = highlight.js; path = Sources/Highlightr/Resources/JS/highlight.js; sourceTree = "<group>"; };
+		841398E1F2B9FA488258164F0EE81DD4 /* atom-one-dark.min.css */ = {isa = PBXFileReference; includeInIndex = 1; name = "atom-one-dark.min.css"; path = "Sources/Highlightr/Resources/Styles/atom-one-dark.min.css"; sourceTree = "<group>"; };
+		90882C3318C6E3BAF627F1A2BD729FEF /* Pods-JSONMapping-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JSONMapping-acknowledgements.plist"; sourceTree = "<group>"; };
+		9A039DDA7F352432C7D6D297003BCFDA /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Sources/Highlightr/Theme.swift; sourceTree = "<group>"; };
+		9A67E9C594BA083B40D37408ED9E6965 /* Pods-JSONMapping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSONMapping.release.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A99EF4559E45FE17565636B3EB9ABD77 /* Pods-JSONMapping-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JSONMapping-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B3238715A5EB41BDDFDA0C4070A37707 /* dracula.min.css */ = {isa = PBXFileReference; includeInIndex = 1; name = dracula.min.css; path = Sources/Highlightr/Resources/Styles/dracula.min.css; sourceTree = "<group>"; };
+		B7BCEE2A2A5F4BA14A074610D069E2E7 /* Pods-JSONMapping-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JSONMapping-frameworks.sh"; sourceTree = "<group>"; };
+		B7C1B90B06F49F827EEE20609BC4ED69 /* Highlightr3.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Highlightr3.modulemap; sourceTree = "<group>"; };
+		BD15E4960ECB6BBDDEEDAB37744E7252 /* darcula.min.css */ = {isa = PBXFileReference; includeInIndex = 1; name = darcula.min.css; path = Sources/Highlightr/Resources/Styles/darcula.min.css; sourceTree = "<group>"; };
+		C9914663CD416276D591A22EFA272CC6 /* solarized-light.min.css */ = {isa = PBXFileReference; includeInIndex = 1; name = "solarized-light.min.css"; path = "Sources/Highlightr/Resources/Styles/solarized-light.min.css"; sourceTree = "<group>"; };
+		D38F3E55CB182C5C8F843B4609AC6E11 /* Highlightr3-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Highlightr3-Info.plist"; sourceTree = "<group>"; };
+		E16AD61F14D2068D73A393D965885F11 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		EB33C2842419B9628E18C25FD4CC4B67 /* HighlightTextStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HighlightTextStorage.swift; path = Sources/Highlightr/HighlightTextStorage.swift; sourceTree = "<group>"; };
+		ED4227D28AE0B09C21E457E02ABFD18A /* Highlightr.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Highlightr.swift; path = Sources/Highlightr/Highlightr.swift; sourceTree = "<group>"; };
+		EDE0AFC9F13E50B7A1212954A9CD3B05 /* Pods-JSONMapping-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JSONMapping-Info.plist"; sourceTree = "<group>"; };
+		EE88592C1E1FD726700A6A5C0AAE6232 /* Highlightr3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Highlightr3.release.xcconfig; sourceTree = "<group>"; };
+		FA9077085788AC32D676C8D0E4D4A257 /* Highlightr3-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Highlightr3-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06A7F9C42237415042FF734B644BDB4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E1AB4292E94757AEF2BAE384F0FDF4 /* AppKit.framework in Frameworks */,
+				4944096F8E77776334370934DC402692 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47D2CF44BA991A171EBF110EC7F15DC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91DAA4B8C3366405AD1A946D8296B37F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1635C9430921FDFD44ECFED6028EF9A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EEA818E1B328BD3ED1730AC06E2E37C /* Highlightr3.framework */,
+				15CE25F397BD2E6192D9B15325462E78 /* Pods_JSONMapping.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		396439455E8E8EEF82365EED3C278B8B /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				2428C7A34D19A0958E5B2F7BBE991092 /* AppKit.framework */,
+				E16AD61F14D2068D73A393D965885F11 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		8B5C0AE7D2E34BFA8711E8DF054D1ACA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				841398E1F2B9FA488258164F0EE81DD4 /* atom-one-dark.min.css */,
+				BD15E4960ECB6BBDDEEDAB37744E7252 /* darcula.min.css */,
+				B3238715A5EB41BDDFDA0C4070A37707 /* dracula.min.css */,
+				169BB0E7F4280F4B028EE798518E36CD /* github.min.css */,
+				809FCC9EE6BDC0AFC1EBAF1D482407BA /* highlight.js */,
+				4B41A03C45CE4670D64CF501FEB91FE9 /* solarized-dark.min.css */,
+				C9914663CD416276D591A22EFA272CC6 /* solarized-light.min.css */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8D20DD16393A73613B497223087E7000 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B7C1B90B06F49F827EEE20609BC4ED69 /* Highlightr3.modulemap */,
+				FA9077085788AC32D676C8D0E4D4A257 /* Highlightr3-dummy.m */,
+				D38F3E55CB182C5C8F843B4609AC6E11 /* Highlightr3-Info.plist */,
+				1EF685E5DF0EB00591CDD2A6EE21B545 /* Highlightr3-prefix.pch */,
+				24DDBBC6EDE454363DADFC0CBC89D958 /* Highlightr3-umbrella.h */,
+				5172EE712A9DE20BD8E8B7DB54ABEA46 /* Highlightr3.debug.xcconfig */,
+				EE88592C1E1FD726700A6A5C0AAE6232 /* Highlightr3.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Highlightr3";
+			sourceTree = "<group>";
+		};
+		C080C886C9E2F80D52E3E86A62E5B711 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				396439455E8E8EEF82365EED3C278B8B /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3CAE59C49064DEE7AF048D3E08B20CE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6D538636D840C6AF1AA46D4CCE7237E /* Pods-JSONMapping */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				C080C886C9E2F80D52E3E86A62E5B711 /* Frameworks */,
+				F598962A1CDB691B7502A0583CED8B63 /* Pods */,
+				1635C9430921FDFD44ECFED6028EF9A2 /* Products */,
+				C3CAE59C49064DEE7AF048D3E08B20CE /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E6D538636D840C6AF1AA46D4CCE7237E /* Pods-JSONMapping */ = {
+			isa = PBXGroup;
+			children = (
+				66D1DC0F26780A02B2593E58D2B76534 /* Pods-JSONMapping.modulemap */,
+				A99EF4559E45FE17565636B3EB9ABD77 /* Pods-JSONMapping-acknowledgements.markdown */,
+				90882C3318C6E3BAF627F1A2BD729FEF /* Pods-JSONMapping-acknowledgements.plist */,
+				65280D761D1AF886000E0AB26D1C4A21 /* Pods-JSONMapping-dummy.m */,
+				B7BCEE2A2A5F4BA14A074610D069E2E7 /* Pods-JSONMapping-frameworks.sh */,
+				EDE0AFC9F13E50B7A1212954A9CD3B05 /* Pods-JSONMapping-Info.plist */,
+				7584A83E624A1FCA2F93FD4E7095999A /* Pods-JSONMapping-umbrella.h */,
+				5C07392A6471A95E42945D016DBC2E2A /* Pods-JSONMapping.debug.xcconfig */,
+				9A67E9C594BA083B40D37408ED9E6965 /* Pods-JSONMapping.release.xcconfig */,
+			);
+			name = "Pods-JSONMapping";
+			path = "Target Support Files/Pods-JSONMapping";
+			sourceTree = "<group>";
+		};
+		F598962A1CDB691B7502A0583CED8B63 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE33679F43DC3986AE10A499A6AFBC2C /* Highlightr3 */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE33679F43DC3986AE10A499A6AFBC2C /* Highlightr3 */ = {
+			isa = PBXGroup;
+			children = (
+				ED4227D28AE0B09C21E457E02ABFD18A /* Highlightr.swift */,
+				EB33C2842419B9628E18C25FD4CC4B67 /* HighlightTextStorage.swift */,
+				9A039DDA7F352432C7D6D297003BCFDA /* Theme.swift */,
+				8B5C0AE7D2E34BFA8711E8DF054D1ACA /* Resources */,
+				8D20DD16393A73613B497223087E7000 /* Support Files */,
+			);
+			name = Highlightr3;
+			path = Highlightr3;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8ABBE60D9387555825AF11E93D0AA5DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F2746F45508B1686FF9214D387C5F98 /* Highlightr3-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9431F5DF626C736E40977EA13B7D6408 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				094D98AFB3C3A162814148F9EDC85181 /* Pods-JSONMapping-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4DC8A3B828D9B0F91C62B0CC584FD74E /* Highlightr3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 526F040B1E561D4941B971D05322B405 /* Build configuration list for PBXNativeTarget "Highlightr3" */;
+			buildPhases = (
+				8ABBE60D9387555825AF11E93D0AA5DE /* Headers */,
+				4F9AC7D1D9D435C13FB04B4377AEA044 /* Sources */,
+				06A7F9C42237415042FF734B644BDB4E /* Frameworks */,
+				1A32A8817E49DED013278E6CBAFF0C8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Highlightr3;
+			productName = Highlightr3;
+			productReference = 3EEA818E1B328BD3ED1730AC06E2E37C /* Highlightr3.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C2139E1B017572ACB5CA190298CAB048 /* Pods-JSONMapping */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52EF9041726B1AFA678E0E388D7215DE /* Build configuration list for PBXNativeTarget "Pods-JSONMapping" */;
+			buildPhases = (
+				9431F5DF626C736E40977EA13B7D6408 /* Headers */,
+				C04DCFD1B8CEEBCCC2E6358D533B86CB /* Sources */,
+				47D2CF44BA991A171EBF110EC7F15DC6 /* Frameworks */,
+				3BD1D934087A0799DA2859BBC818743E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97A24F82F1C5C998E1967BD0027CB440 /* PBXTargetDependency */,
+			);
+			name = "Pods-JSONMapping";
+			productName = "Pods-JSONMapping";
+			productReference = 15CE25F397BD2E6192D9B15325462E78 /* Pods_JSONMapping.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 1635C9430921FDFD44ECFED6028EF9A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4DC8A3B828D9B0F91C62B0CC584FD74E /* Highlightr3 */,
+				C2139E1B017572ACB5CA190298CAB048 /* Pods-JSONMapping */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A32A8817E49DED013278E6CBAFF0C8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5068B0D77DC5BEC934F722AE1ADEFBF /* atom-one-dark.min.css in Resources */,
+				042A5584B678E546B85216299A014249 /* darcula.min.css in Resources */,
+				0246CFD23D51E6EABCC9B1C3B633DDFE /* dracula.min.css in Resources */,
+				46F4A1A218219D9ED80676F2D2DA3CD2 /* github.min.css in Resources */,
+				B91BE6CCCD1484939F4154AB79509923 /* highlight.js in Resources */,
+				2ADDA3FC13FDAE176A5D889591377C7F /* solarized-dark.min.css in Resources */,
+				55514A4CE6ED0C7DAF694E81A8358A4F /* solarized-light.min.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BD1D934087A0799DA2859BBC818743E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F9AC7D1D9D435C13FB04B4377AEA044 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2D20505A46083727180E17AB870D8B0 /* Highlightr.swift in Sources */,
+				8AC5147DA7948894AFB3A2CAFC879F2A /* Highlightr3-dummy.m in Sources */,
+				8CA9F252019686C21E045BDF0E5743F0 /* HighlightTextStorage.swift in Sources */,
+				7B06C47679C8B66F41959B5FC3175A55 /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C04DCFD1B8CEEBCCC2E6358D533B86CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7442569D0F95590918DD58A8B847E8B8 /* Pods-JSONMapping-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		97A24F82F1C5C998E1967BD0027CB440 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Highlightr3;
+			target = 4DC8A3B828D9B0F91C62B0CC584FD74E /* Highlightr3 */;
+			targetProxy = 35198CFF3896B401943530DEE5ADA64A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2480B654C6CB2752FDB1BDF117657566 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C07392A6471A95E42945D016DBC2E2A /* Pods-JSONMapping.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JSONMapping/Pods-JSONMapping-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MODULEMAP_FILE = "Target Support Files/Pods-JSONMapping/Pods-JSONMapping.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3905F95A4A68293B1DC88E1C566B0E85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5172EE712A9DE20BD8E8B7DB54ABEA46 /* Highlightr3.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Highlightr3/Highlightr3-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Highlightr3/Highlightr3-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Highlightr3/Highlightr3.modulemap";
+				PRODUCT_MODULE_NAME = Highlightr3;
+				PRODUCT_NAME = Highlightr3;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7222A254C1DAF7DAEAA98CB82B4C7843 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A67E9C594BA083B40D37408ED9E6965 /* Pods-JSONMapping.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JSONMapping/Pods-JSONMapping-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MODULEMAP_FILE = "Target Support Files/Pods-JSONMapping/Pods-JSONMapping.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		82E73717A2562031D5E1F4D85DD1A982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B76AE7FECECF7E2240A0703F3AD8E1A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE88592C1E1FD726700A6A5C0AAE6232 /* Highlightr3.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Highlightr3/Highlightr3-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Highlightr3/Highlightr3-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Highlightr3/Highlightr3.modulemap";
+				PRODUCT_MODULE_NAME = Highlightr3;
+				PRODUCT_NAME = Highlightr3;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D39E634FC2CFF97419EB3682DD2807FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D39E634FC2CFF97419EB3682DD2807FA /* Debug */,
+				82E73717A2562031D5E1F4D85DD1A982 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		526F040B1E561D4941B971D05322B405 /* Build configuration list for PBXNativeTarget "Highlightr3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3905F95A4A68293B1DC88E1C566B0E85 /* Debug */,
+				B76AE7FECECF7E2240A0703F3AD8E1A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52EF9041726B1AFA678E0E388D7215DE /* Build configuration list for PBXNativeTarget "Pods-JSONMapping" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2480B654C6CB2752FDB1BDF117657566 /* Debug */,
+				7222A254C1DAF7DAEAA98CB82B4C7843 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
