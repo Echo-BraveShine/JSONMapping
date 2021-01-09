@@ -56,6 +56,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 extension AppDelegate : NSWindowDelegate{
     func windowShouldClose(_ sender: NSWindow) -> Bool {
         sender.orderOut(self)
+        if sender.isZoomed {
+            return true
+        }else{
+            sender.orderOut(self)
+        }
         return false
     }
 }
