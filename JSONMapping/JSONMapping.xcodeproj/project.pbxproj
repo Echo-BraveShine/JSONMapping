@@ -12,6 +12,7 @@
 		5F614446259B6DE0007DCFB4 /* SwiftConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F614445259B6DE0007DCFB4 /* SwiftConversion.swift */; };
 		5F614449259B6E34007DCFB4 /* ObjcConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F614448259B6E34007DCFB4 /* ObjcConversion.swift */; };
 		5F84221825A9876E00C4ECF2 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F84221725A9876E00C4ECF2 /* TextView.swift */; };
+		5F96A3AF25AABAE9008FB899 /* PreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F96A3AE25AABAE9008FB899 /* PreferenceView.swift */; };
 		5FD6A06225A883A0006A308B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FD6A06025A883A0006A308B /* Localizable.strings */; };
 		5FF8FC99252AD0B800467BF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF8FC98252AD0B800467BF8 /* AppDelegate.swift */; };
 		5FF8FC9B252AD0B800467BF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF8FC9A252AD0B800467BF8 /* ContentView.swift */; };
@@ -27,6 +28,7 @@
 		5F614445259B6DE0007DCFB4 /* SwiftConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftConversion.swift; sourceTree = "<group>"; };
 		5F614448259B6E34007DCFB4 /* ObjcConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjcConversion.swift; sourceTree = "<group>"; };
 		5F84221725A9876E00C4ECF2 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		5F96A3AE25AABAE9008FB899 /* PreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceView.swift; sourceTree = "<group>"; };
 		5FD6A05625A87DF4006A308B /* JSONMapping-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONMapping-Bridging-Header.h"; sourceTree = "<group>"; };
 		5FD6A06125A883A0006A308B /* zh_Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_Hans; path = Localizable.strings; sourceTree = "<group>"; };
 		5FF8FC95252AD0B800467BF8 /* JSONMapping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONMapping.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 				5FF8FCA5252AD0B900467BF8 /* JSONMapping.entitlements */,
 				5FF8FC98252AD0B800467BF8 /* AppDelegate.swift */,
 				5FF8FC9A252AD0B800467BF8 /* ContentView.swift */,
+				5F96A3AE25AABAE9008FB899 /* PreferenceView.swift */,
 				5F614423259B6457007DCFB4 /* String+Ext.swift */,
 				5F614445259B6DE0007DCFB4 /* SwiftConversion.swift */,
 				5F614448259B6E34007DCFB4 /* ObjcConversion.swift */,
@@ -225,7 +228,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuild_version=$(date +%y%m%d%H%M)\necho \"build_version${build_version}\"\n/usr/libexec/PlistBuddy -c \"Set CFBundleVersion ${build_version}\" ${INFOPLIST_FILE}\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuild_version=date +\"%m%d\"\necho \"build_version${build_version}\"\n/usr/libexec/PlistBuddy -c \"Set CFBundleVersion ${build_version}\" ${INFOPLIST_FILE}\n";
 		};
 		609BF8AFBD7A118D0061B3DA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F96A3AF25AABAE9008FB899 /* PreferenceView.swift in Sources */,
 				5F614424259B6457007DCFB4 /* String+Ext.swift in Sources */,
 				5FF8FC9B252AD0B800467BF8 /* ContentView.swift in Sources */,
 				5FF8FC99252AD0B800467BF8 /* AppDelegate.swift in Sources */,
@@ -442,7 +446,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BraveShine.SwiftMapping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -473,7 +477,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BraveShine.SwiftMapping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

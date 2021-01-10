@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-JSONMapping/Pods-JSONMapping-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Highlightr3/Highlightr3.framework
+${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework

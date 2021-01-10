@@ -3,5 +3,6 @@ target 'JSONMapping' do
   use_frameworks!
 
   pod 'Highlightr3'
+  pod 'SwiftyUserDefaults'
 
 end

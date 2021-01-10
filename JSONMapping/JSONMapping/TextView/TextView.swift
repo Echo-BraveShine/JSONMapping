@@ -8,15 +8,19 @@
 import SwiftUI
 import Highlightr3
 import Combine
+import SwiftyUserDefaults
 
-
-enum TextViewTheme: String {
+enum TextViewTheme: String,DefaultsSerializable,CaseIterable,Identifiable {
     case atom_one_dark = "atom-one-dark"
     case darcula = "darcula"
     case dracula = "dracula"
     case github = "github"
     case solarized_dark = "solarized-dark"
     case solarized_light = "solarized-light"
+    
+    var id: String{
+        return self.rawValue
+    }
 }
 enum TextViewLanguage : String{
     case json
@@ -212,11 +216,26 @@ final class CustomTextView: NSView {
     
     // MARK: - Life cycle
     
+    var dispose: DefaultsDisposable?
+    
     override func viewWillDraw() {
         super.viewWillDraw()
         
         setupScrollViewConstraints()
         setupTextView()
+        
+        dispose =  Defaults.observe(\.textViewTheme, options: [.new,.old]) { (update) in
+            guard let new = update.newValue,let old = update.oldValue else{return}
+            if old != new{
+                self.theme = new
+            }
+        }
+
+        
+    }
+    
+    deinit {
+        dispose?.dispose()
     }
     
     func setupScrollViewConstraints() {

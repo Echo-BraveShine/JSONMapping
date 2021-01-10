@@ -6,11 +6,19 @@
 //
 
 import Foundation
-
+import SwiftyUserDefaults
 class SwiftConversion {
     
-    var type : SwiftMappingType = .default
+    var optional : SwiftOptional = .default
+    var type : SwiftModelType = .struct
+    var attribute : SwiftAttribute = .let
+    
     var objects: [String] = []
+    init() {
+        optional = Defaults[\.swiftOptional]
+        attribute = Defaults[\.swiftAttribute]
+        type = Defaults[\.swiftModelType]
+    }
     
     func conversion(_ string: String) -> String{
         guard let jsonData = string.data(using: .utf8) else{ return "" }
@@ -55,7 +63,7 @@ class SwiftConversion {
         var p : String = ""
         if let n = name{
             let clsName = n.capitalized
-            p = "   let \(n) : \(clsName)" + (type == .`default` ? " = \(clsName)()" : "?")
+            p = "   \(attribute.rawValue) \(n) : \(clsName)" + (optional == .`default` ? " = \(clsName)()" : "?")
         }
         self.conversionDictionarySubProperty(dict: dict,name)
         
@@ -67,7 +75,7 @@ class SwiftConversion {
         let clsName: String = name?.capitalized ?? "Object"
 
         
-        var result : String = "struct \(clsName) { \n"//"@interface \(name?.capitalized ?? "Object") : NSObject \n"
+        var result : String = "\(type.rawValue) \(clsName) { \n"//"@interface \(name?.capitalized ?? "Object") : NSObject \n"
       
         dict.keys.forEach { (str) in
             if let value = dict[str]{
@@ -94,12 +102,12 @@ class SwiftConversion {
         
         if let dict = first as? [String: Any]{
             if let n = name{
-                p = "   let \(n) : [\(n.capitalized)]" + (type == .`default` ? " = []" : "?")
+                p = "   \(attribute.rawValue) \(n) : [\(n.capitalized)]" + (optional == .`default` ? " = []" : "?")
             }
             conversionDictionarySubProperty(dict: dict,name?.capitalized)
         }else{
             if let n = name{
-                p = "   let \(n) : [Any]" + (type == .`default` ? " = []" : "?")
+                p = "   \(attribute.rawValue) \(n) : [Any]" + (optional == .`default` ? " = []" : "?")
             }
         }
         
@@ -117,21 +125,21 @@ class SwiftConversion {
     
     
     func conversionstring(_ string: String,_ name: String) -> String{
-        return "    let \(name) : String" + (type == .`default` ? " = \"\"" : "?")
+        return "    \(attribute.rawValue) \(name) : String" + (optional == .`default` ? " = \"\"" : "?")
     }
     
     func conversionInt(_ int : Int,_ name: String) -> String{
-        return "    let \(name) : Int" + (type == .`default` ? " = 0" : "?")
+        return "    \(attribute.rawValue) \(name) : Int" + (optional == .`default` ? " = 0" : "?")
     }
     
     func conversionFloat(_ float: Float,_ name: String) -> String{
-        return "    let \(name) : Float" + (type == .`default` ? " = 0.0" : "?")
+        return "    \(attribute.rawValue) \(name) : Float" + (optional == .`default` ? " = 0.0" : "?")
     }
     
     func conversionDouble(_ double : Double,_ name: String) -> String{
-        return "    let \(name) : Double" + (type == .`default` ? " = 0.0" : "?")
+        return "    \(attribute.rawValue) \(name) : Double" + (optional == .`default` ? " = 0.0" : "?")
     }
     func conversionBool(_ bool : Bool,_ name: String) -> String{
-        return "    let \(name) : Bool" + (type == .`default` ? " = false" : "?")
+        return "    \(attribute.rawValue) \(name) : Bool" + (optional == .`default` ? " = false" : "?")
     }
 }

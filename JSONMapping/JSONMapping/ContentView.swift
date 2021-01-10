@@ -6,24 +6,7 @@
 //
 
 import SwiftUI
-enum SwiftMappingType: String, CaseIterable,Identifiable {
-    var id: String{
-        self.rawValue
-    }
-    
-    
-    case `default`
-    case `optional`
-    
-    var desc: String{
-        switch self {
-        case .default:
-            return NSLocalizedString("Some", comment: "")
-        case .optional:
-            return NSLocalizedString("None", comment: "")
-        }
-    }
-}
+import SwiftyUserDefaults
 
 enum MappingLanguage: String, CaseIterable,Identifiable {
     var id: String{
@@ -48,8 +31,8 @@ class ContentViewModel: ObservableObject {
     @Published var inputText: String = ""
     
     @Published var outputText: String = ""
-   
-    @Published var type: SwiftMappingType = .default
+    
+    //    @Published var type: SwiftOptional = .default
     
     @Published var language : MappingLanguage = .swift{
         didSet{
@@ -59,10 +42,38 @@ class ContentViewModel: ObservableObject {
             if language == .objc{
                 textViewLanguage = .objc
             }
+            conversion()
         }
     }
     
     @Published var textViewLanguage : TextViewLanguage = .swift
+    
+    var optionalDisposable : DefaultsDisposable?
+    var typeDisposable : DefaultsDisposable?
+    var attributeDisposable : DefaultsDisposable?
+    
+    init() {
+        optionalDisposable =  Defaults.observe(\.swiftOptional, options: [.new,.old]) { (update) in
+            guard let new = update.newValue,let old = update.oldValue else{return}
+            if old != new{
+                self.conversion()
+            }
+        }
+        typeDisposable =  Defaults.observe(\.swiftModelType, options: [.new,.old]) { (update) in
+            guard let new = update.newValue,let old = update.oldValue else{return}
+            if old != new{
+                self.conversion()
+            }
+        }
+        
+        attributeDisposable =  Defaults.observe(\.swiftAttribute, options: [.new,.old]) { (update) in
+            guard let new = update.newValue,let old = update.oldValue else{return}
+            if old != new{
+                self.conversion()
+                
+            }
+        }
+    }
     
     func format() {
         var errors: [JSONParseError] = []
@@ -71,23 +82,29 @@ class ContentViewModel: ObservableObject {
         }
     }
     
-    func conversion(){
-        if inputText.count == 0 {
-            outputText = ""
-            return
-        }
-        if language == .swift{
-            let c = SwiftConversion()
-            c.type = type
-            let s = c.conversion(inputText)
-            outputText = s
-        }
+    func conversionSwift(optional: SwiftOptional? = nil, type: SwiftModelType? = nil , attribute: SwiftAttribute? = nil){
         
-        if language == .objc {
-            let c = ObjcConversion()
-            let s = c.conversion(inputText)
-            outputText = s
+    }
+    
+    func conversion(){
+        DispatchQueue.main.async {
+            if self.inputText.count == 0 {
+                self.outputText = ""
+                return
+            }
+            if self.language == .swift{
+                let c = SwiftConversion()
+                let s = c.conversion(self.inputText)
+                self.outputText = s
+            }
+            
+            if self.language == .objc {
+                let c = ObjcConversion()
+                let s = c.conversion(self.inputText)
+                self.outputText = s
+            }
         }
+
     }
 }
 
@@ -100,7 +117,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             GeometryReader.init { proxy in
-                let centerWidth : CGFloat = 150
+                let centerWidth : CGFloat = 120
                 let leftWidth : CGFloat = (proxy.size.width - centerWidth) / 2
                 let rightWidth : CGFloat = leftWidth
                 
@@ -108,7 +125,7 @@ struct ContentView: View {
                     VStack.init(alignment: .center, spacing: 0, content: {
                         Text(NSLocalizedString("Please enter the json text", comment: ""))
                             .padding(.all, 10)
-//                        TextEditor.init(text: self.$viewModel.inputText)
+                        //                        TextEditor.init(text: self.$viewModel.inputText)
                         EditorTextView.init(text: self.$viewModel.inputText)
                         
                     }).frame(width: leftWidth, height: proxy.size.height, alignment: .top)
@@ -131,22 +148,22 @@ struct ContentView: View {
                         .padding(.top, 30)
                         .padding(.all, 5)
                         
-                        if viewModel.language == .swift{
-                            
-                            MenuButton(label: Text("\(self.viewModel.type.desc)")) {
-                                ForEach(SwiftMappingType.allCases){ item in
-                                    Button.init(action: {
-                                        self.viewModel.type = item
-                                    }, label: {
-                                        Text("\(item.desc)")
-                                    })
-                                }
-                            }
-                            .padding(.top, 30)
-                                .padding(.all, 5)
-                        }
-                        
-                        
+                        //                        if viewModel.language == .swift{
+                        //
+                        //                            MenuButton(label: Text("\(self.viewModel.type.desc)")) {
+                        //                                ForEach(SwiftOptional.allCases){ item in
+                        //                                    Button.init(action: {
+                        //                                        self.viewModel.type = item
+                        //                                    }, label: {
+                        //                                        Text("\(item.desc)")
+                        //                                    })
+                        //                                }
+                        //                            }
+                        //                            .padding(.top, 30)
+                        //                                .padding(.all, 5)
+                        //                        }
+                        //
+                        //
                         
                         Spacer()
                         
@@ -162,7 +179,7 @@ struct ContentView: View {
                             }, label: {
                                 Text(NSLocalizedString("conversion", comment: ""))
                                     .frame(width: centerWidth / 2, height: nil, alignment: .center)
-
+                                
                             })
                             Button.init(action: {
                                 let pboard = NSPasteboard.general
@@ -171,7 +188,7 @@ struct ContentView: View {
                             }, label: {
                                 Text(NSLocalizedString("copy", comment: ""))
                                     .frame(width: centerWidth / 2, height: nil, alignment: .center)
-
+                                
                             })
                         }
                         .padding(.bottom, 10)
@@ -182,7 +199,7 @@ struct ContentView: View {
                         Text(NSLocalizedString("results", comment: ""))
                             .padding(.all, 10)
                         VStack.init {
-//                            TextEditor.init(text: self.$viewModel.outputText)
+                            //                            TextEditor.init(text: self.$viewModel.outputText)
                             EditorTextView.init(text: self.$viewModel.outputText,language: self.viewModel.textViewLanguage)
                         }
                         .background(Color.white)

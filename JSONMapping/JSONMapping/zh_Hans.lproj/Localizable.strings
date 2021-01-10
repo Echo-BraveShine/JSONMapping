@@ -20,3 +20,15 @@
 "Some" = "非可选";
 
 "None" = "可选";
+
+"Open JSONMapping" = "打开 JSONMapping";
+
+"Preferences" = "偏好设置";
+
+"Text highlighted:" = "文本高亮:";
+
+"Swift Attribute:" = "Swift 属性:";
+
+"Swift Type" = "Swift 类型:";
+
+"Swift Optional:" = "Swift 可选:";
