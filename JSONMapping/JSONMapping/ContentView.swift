@@ -31,9 +31,7 @@ class ContentViewModel: ObservableObject {
     @Published var inputText: String = ""
     
     @Published var outputText: String = ""
-    
-    //    @Published var type: SwiftOptional = .default
-    
+        
     @Published var language : MappingLanguage = .swift{
         didSet{
             if language == .swift{
@@ -77,7 +75,7 @@ class ContentViewModel: ObservableObject {
     
     func format() {
         var errors: [JSONParseError] = []
-        if let s = inputText.pretifyJSONv2(format: 4, spaces: true, allowWeakJSON: true, errors: &errors){
+        if let s = inputText.pretifyJSONv2(format: 2, spaces: true, allowWeakJSON: true, errors: &errors){
             inputText = s
         }
     }
@@ -111,9 +109,7 @@ class ContentViewModel: ObservableObject {
 struct ContentView: View {
     
     @StateObject var viewModel = ContentViewModel()
-    
-    
-    
+        
     var body: some View {
         VStack {
             GeometryReader.init { proxy in
@@ -125,7 +121,16 @@ struct ContentView: View {
                     VStack.init(alignment: .center, spacing: 0, content: {
                         Text(NSLocalizedString("Please enter the json text", comment: ""))
                             .padding(.all, 10)
-                        EditorTextView.init(text: self.$viewModel.inputText)
+//                        EditorTextView.init(text: self.$viewModel.inputText, onTextChange:  { (_) in
+//                            self.viewModel.format()
+//                        }) {
+//                            self.viewModel.conversion()
+//                        }
+                        EditorTextView.init(text: self.$viewModel.inputText, onCommit: {
+                            self.viewModel.conversion()
+                        }, onTextChange: { (_) in
+                            self.viewModel.format()
+                        }, language: TextViewLanguage.json)
                         
                     }).frame(width: leftWidth, height: proxy.size.height, alignment: .top)
                     
