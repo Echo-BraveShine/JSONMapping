@@ -44,6 +44,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
        
     }
+    @IBAction func reopenMainWindow(_ sender: NSMenuItem) {
+        reOpenWindow()
+    }
     
     func openPreferenceWindow(){
         let size : NSSize = NSSize(width: 350, height: 200)

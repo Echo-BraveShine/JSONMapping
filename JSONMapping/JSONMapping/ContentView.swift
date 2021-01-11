@@ -120,12 +120,8 @@ struct ContentView: View {
                 HStack.init(alignment: .top, spacing: 0, content: {
                     VStack.init(alignment: .center, spacing: 0, content: {
                         Text(NSLocalizedString("Please enter the json text", comment: ""))
+//                            .foregroundColor(Color.secondary)
                             .padding(.all, 10)
-//                        EditorTextView.init(text: self.$viewModel.inputText, onTextChange:  { (_) in
-//                            self.viewModel.format()
-//                        }) {
-//                            self.viewModel.conversion()
-//                        }
                         EditorTextView.init(text: self.$viewModel.inputText, onCommit: {
                             self.viewModel.conversion()
                         }, onTextChange: { (_) in
