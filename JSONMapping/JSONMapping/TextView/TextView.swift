@@ -151,6 +151,11 @@ final class CustomTextView: NSView {
         return scrollView
     }()
     
+    private lazy var textFinder: NSTextFinder = {
+        let f = NSTextFinder()
+        return f
+    }()
+    
     private lazy var textView: NSTextView = {
         let contentSize = scrollView.contentSize
         
@@ -183,6 +188,10 @@ final class CustomTextView: NSView {
         textView.allowsUndo              = true
         textView.allowsDocumentBackgroundColorChange = false
 
+        
+        self.textFinder.findBarContainer = textView.enclosingScrollView
+        textView.usesFindBar = true
+        textView.isIncrementalSearchingEnabled = true
 //        textView.
         
         return textView
