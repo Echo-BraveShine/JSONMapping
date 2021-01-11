@@ -24,27 +24,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
             backing: .buffered, defer: false)
         window.isReleasedWhenClosed = false
-        window.center()
         window.setFrameAutosaveName("JSONMapping")
         window.title = "JSONMapping"
         window.contentView = NSHostingView(rootView: contentView)
+        window.center()
         window.makeKeyAndOrderFront(nil)
+        
         window.delegate = self
     }
 
     @IBAction func preferenceItemClick(_ sender: NSMenuItem) {
-        let contentView = PreferenceView()
-            .frame(width: 350, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-       let preferenceWindow = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 960, height: 600),
-            styleMask: [.titled, .closable,],
-            backing: .buffered, defer: false)
-        preferenceWindow.isReleasedWhenClosed = false
-        preferenceWindow.center()
-        preferenceWindow.title = NSLocalizedString("Preferences", comment: "")
-        preferenceWindow.contentView = NSHostingView(rootView: contentView)
-        preferenceWindow.makeKeyAndOrderFront(nil)
-    
+        openPreferenceWindow()
     }
     @objc func reOpenWindow(){
         for window: NSWindow in NSApplication.shared.windows {
@@ -53,6 +43,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
        
+    }
+    
+    func openPreferenceWindow(){
+        let size : NSSize = NSSize(width: 350, height: 200)
+
+        let contentView = PreferenceView()
+            .frame(width: size.width, height: size.height, alignment: .center)
+        let preferenceWindow = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: size.width, height: size.height),
+            styleMask: [.titled, .closable,],
+            backing: .buffered, defer: false)
+        preferenceWindow.isReleasedWhenClosed = false
+        preferenceWindow.center()
+        preferenceWindow.title = NSLocalizedString("Preferences", comment: "")
+        preferenceWindow.contentView = NSHostingView(rootView: contentView)
+        preferenceWindow.center()
+        preferenceWindow.makeKeyAndOrderFront(nil)
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

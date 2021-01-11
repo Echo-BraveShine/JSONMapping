@@ -125,7 +125,6 @@ struct ContentView: View {
                     VStack.init(alignment: .center, spacing: 0, content: {
                         Text(NSLocalizedString("Please enter the json text", comment: ""))
                             .padding(.all, 10)
-                        //                        TextEditor.init(text: self.$viewModel.inputText)
                         EditorTextView.init(text: self.$viewModel.inputText)
                         
                     }).frame(width: leftWidth, height: proxy.size.height, alignment: .top)
@@ -195,13 +194,30 @@ struct ContentView: View {
                         
                     }.frame(width: centerWidth, height: proxy.size.height, alignment: .top)
                     
-                    VStack.init(alignment: .center, spacing: 0, content: {
-                        Text(NSLocalizedString("results", comment: ""))
-                            .padding(.all, 10)
-                        VStack.init {
-                            //                            TextEditor.init(text: self.$viewModel.outputText)
-                            EditorTextView.init(text: self.$viewModel.outputText,language: self.viewModel.textViewLanguage)
+                    VStack.init(alignment: .center,spacing: 0, content: {
+                       
+                        ZStack.init {
+                            Text(NSLocalizedString("results", comment: ""))
+                            HStack.init(alignment: .center, spacing: 0) {
+                                Button.init {
+                                    
+                                    if let delegate : AppDelegate = NSApplication.shared.delegate as? AppDelegate{
+                                        delegate.openPreferenceWindow()
+                                    }
+                                    
+                                } label: {
+                                    Image.init("content_setting")
+                                        .resizable()
+                                }
+                                .buttonStyle(BorderlessButtonStyle())
+
+                            }
+                            .frame(width: rightWidth, height: nil, alignment: .trailing)
+
                         }
+                        .padding(.all, 10)
+
+                        EditorTextView.init(text: self.$viewModel.outputText,language: self.viewModel.textViewLanguage)
                         .background(Color.white)
                         .frame(width: nil, height: nil, alignment: .top)
                         
