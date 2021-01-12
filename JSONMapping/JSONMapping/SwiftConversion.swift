@@ -90,17 +90,29 @@ class SwiftConversion {
         objects.append(result)
         
     }
+  
+    func combine(_ list: [[String : Any]]) -> [String : Any]{
+        var r : [String : Any] = [:]
+        list.forEach { (item) in
+            item.forEach { (k,v) in
+                r[k] = v
+            }
+        }
+        return r
+    }
     
     
     func conversionArray(_ array: [Any],_ name: String? = nil) -> String{
         
-        guard let first = array.first else{return ""}
+        guard let _ = array.first else{return ""}
+        
         
         var p : String = ""
         
        
         
-        if let dict = first as? [String: Any]{
+        if let list = array as? [[String : Any]] {
+            let dict = combine(list)
             if let n = name{
                 p = "   \(attribute.rawValue) \(n) : [\(n.capitalized)]" + (optional == .`default` ? " = []" : "?")
             }

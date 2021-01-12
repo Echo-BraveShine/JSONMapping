@@ -52,13 +52,14 @@ extension DefaultsKeys{
     var swiftModelType: DefaultsKey<SwiftModelType> { .init("SwiftModelType", defaultValue: SwiftModelType.struct) }
     
     var swiftOptional: DefaultsKey<SwiftOptional> { .init("SwiftOptional", defaultValue: SwiftOptional.default) }
-
-
+    
+    var defaultLanguage: DefaultsKey<MappingLanguage> { .init("MappingLanguage", defaultValue: MappingLanguage.swift) }
+    
 }
 
 class PreferenceManager: ObservableObject {
-   
-
+    
+    
     
     @Published var theme: TextViewTheme{
         didSet{
@@ -83,85 +84,110 @@ class PreferenceManager: ObservableObject {
             Defaults[\.swiftOptional] = swiftOptional
         }
     }
-
+    
     
     init() {
         self.theme = Defaults[\.textViewTheme]
         self.swiftAttribute = Defaults[\.swiftAttribute]
         self.swiftModelType = Defaults[\.swiftModelType]
         self.swiftOptional = Defaults[\.swiftOptional]
-
+        
     }
 }
 
 struct PreferenceView: View {
     
     @StateObject var viewModel = PreferenceManager()
-
+    
     
     var body: some View {
         
-        VStack.init(alignment: .trailing, spacing: 10) {
-            HStack.init(alignment: .center, spacing: 10) {
-                Text(NSLocalizedString("Text highlighted:", comment: ""))
-                Spacer()
-                MenuButton.init(label: Text(self.viewModel.theme.rawValue)) {
-                    ForEach(TextViewTheme.allCases){ item in
-                        Button.init(action: {
-                            self.viewModel.theme = item
-                        }, label: {
-                            Text("\(item.rawValue)")
+        //        VStack.init(alignment: .trailing, spacing: 10) {
+        
+    
+        TabView.init  {
+                        VStack.init(alignment: .center, spacing: 0, content: {
+                            HStack.init(alignment: .center, spacing: 10) {
+                                Spacer()
+                                Text(NSLocalizedString("Text highlighted:", comment: ""))
+                                MenuButton.init(label: Text(self.viewModel.theme.rawValue)) {
+                                    ForEach(TextViewTheme.allCases){ item in
+                                        Button.init(action: {
+                                            self.viewModel.theme = item
+                                        }, label: {
+                                            Text("\(item.rawValue)")
+                                        })
+                                    }
+                                }
+                                .frame(width: 150, height: 30, alignment: .center)
+                                Spacer()
+                            }
                         })
-                    }
-                }
-                .frame(width: 200, height: 30, alignment: .center)
-            }
-            HStack.init(alignment: .center, spacing: 10) {
-                Text(NSLocalizedString("Swift Attribute:", comment: ""))
-                Spacer()
-                MenuButton.init(label: Text(self.viewModel.swiftAttribute.rawValue)) {
-                    ForEach(SwiftAttribute.allCases){ item in
-                        Button.init(action: {
-                            self.viewModel.swiftAttribute = item
-                        }, label: {
-                            Text("\(item.rawValue)")
+                        
+                        .tabItem { Text(NSLocalizedString("general", comment: "")) }
+                        .tag(1)
+                        
+                        
+                        VStack.init(alignment: .center, spacing: 10, content: {
+                           
+                            HStack.init(alignment: .center, spacing: 10) {
+                                Spacer()
+                                Text(NSLocalizedString("Swift Attribute:", comment: ""))
+                                MenuButton.init(label: Text(self.viewModel.swiftAttribute.rawValue)) {
+                                    
+                                    ForEach(SwiftAttribute.allCases){ item in
+                                        Button.init(action: {
+                                            self.viewModel.swiftAttribute = item
+                                        }, label: {
+                                            Text("\(item.rawValue)")
+                                        })
+                                    }
+                                }
+                                .frame(width: 150, height: 30, alignment: .center)
+
+                                Spacer()
+                            }
+                            
+                            HStack.init(alignment: .center, spacing: 10) {
+                                Spacer()
+                                Text(NSLocalizedString("Swift Type:", comment: ""))
+                                MenuButton.init(label: Text(self.viewModel.swiftModelType.rawValue)) {
+                                    ForEach(SwiftModelType.allCases){ item in
+                                        Button.init(action: {
+                                            self.viewModel.swiftModelType = item
+                                        }, label: {
+                                            Text("\(item.rawValue)")
+                                        })
+                                    }
+                                }
+                                .frame(width: 150, height: 30, alignment: .center)
+
+                                Spacer()
+                            }
+                            
+                            HStack.init(alignment: .center, spacing: 10) {
+                                Spacer()
+                                Text(NSLocalizedString("Swift Optional:", comment: ""))
+                                MenuButton.init(label: Text(self.viewModel.swiftOptional.rawValue)) {
+                                    ForEach(SwiftOptional.allCases){ item in
+                                        Button.init(action: {
+                                            self.viewModel.swiftOptional = item
+                                        }, label: {
+                                            Text("\(item.rawValue)")
+                                        })
+                                    }
+                                }
+                                .frame(width: 150, height: 30, alignment: .center)
+
+                                Spacer()
+                            }
                         })
-                    }
-                }
-                .frame(width: 200, height: 30, alignment: .center)
-            }
+                        .tabItem { Text("Swift") }
+                        .tag(2)
+                     }
             
-            HStack.init(alignment: .center, spacing: 10) {
-                Text(NSLocalizedString("Swift Type", comment: ""))
-                Spacer()
-                MenuButton.init(label: Text(self.viewModel.swiftModelType.rawValue)) {
-                    ForEach(SwiftModelType.allCases){ item in
-                        Button.init(action: {
-                            self.viewModel.swiftModelType = item
-                        }, label: {
-                            Text("\(item.rawValue)")
-                        })
-                    }
-                }
-                .frame(width: 200, height: 30, alignment: .center)
-            }
-            
-            HStack.init(alignment: .center, spacing: 10) {
-                Text(NSLocalizedString("Swift Optional:", comment: ""))
-                Spacer()
-                MenuButton.init(label: Text(self.viewModel.swiftOptional.rawValue)) {
-                    ForEach(SwiftOptional.allCases){ item in
-                        Button.init(action: {
-                            self.viewModel.swiftOptional = item
-                        }, label: {
-                            Text("\(item.rawValue)")
-                        })
-                    }
-                }
-                .frame(width: 200, height: 30, alignment: .center)
-            }
-        }
-        .padding(.all, 20)
+            //        }
+            .padding(.all, 20)
         
     }
 }

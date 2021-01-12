@@ -51,7 +51,7 @@ struct EditorTextView: NSViewRepresentable {
             font: font
         )
         textView.delegate = context.coordinator
-        
+        context.coordinator.textView = textView.textView
         return textView
     }
     
@@ -69,22 +69,23 @@ extension EditorTextView {
     class Coordinator: NSObject, NSTextViewDelegate {
         var parent: EditorTextView
         var selectedRanges: [NSValue] = []
+        var textView: NSTextView?
         
         init(_ parent: EditorTextView) {
             self.parent = parent
         }
         
         func textDidBeginEditing(_ notification: Notification) {
-            guard let textView = notification.object as? NSTextView else {
+            guard let textView = notification.object as? NSTextView,textView == self.textView else {
                 return
             }
             
-            self.parent.text = textView.string
+//            self.parent.text = textView.string
             self.parent.onEditingChanged()
         }
         
         func textDidChange(_ notification: Notification) {
-            guard let textView = notification.object as? NSTextView else {
+            guard let textView = notification.object as? NSTextView,textView == self.textView else {
                 return
             }
             
@@ -92,11 +93,10 @@ extension EditorTextView {
             self.selectedRanges = textView.selectedRanges
             self.parent.onTextChange(textView.string)
             
-//            textView.textStorage?.setAttributes([NSAttributedString.Key.backgroundColor : NSColor.clear], range: NSRange.init(location: 0, length: textView.string.count))
         }
         
         func textDidEndEditing(_ notification: Notification) {
-            guard let textView = notification.object as? NSTextView else {
+            guard let textView = notification.object as? NSTextView ,textView == self.textView else {
                 return
             }
             
@@ -157,7 +157,7 @@ final class CustomTextView: NSView {
         return f
     }()
     
-    private lazy var textView: NSTextView = {
+    lazy var textView: NSTextView = {
         let contentSize = scrollView.contentSize
         
         

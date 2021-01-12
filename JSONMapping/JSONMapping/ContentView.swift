@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftyUserDefaults
 
-enum MappingLanguage: String, CaseIterable,Identifiable {
+enum MappingLanguage: String, CaseIterable,Identifiable,DefaultsSerializable {
     var id: String{
         self.rawValue
     }
@@ -31,7 +31,7 @@ class ContentViewModel: ObservableObject {
     @Published var inputText: String = ""
     
     @Published var outputText: String = ""
-        
+    
     @Published var language : MappingLanguage = .swift{
         didSet{
             if language == .swift{
@@ -40,6 +40,7 @@ class ContentViewModel: ObservableObject {
             if language == .objc{
                 textViewLanguage = .objc
             }
+            Defaults[\.defaultLanguage] = language
             conversion()
         }
     }
@@ -51,6 +52,8 @@ class ContentViewModel: ObservableObject {
     var attributeDisposable : DefaultsDisposable?
     
     init() {
+        
+        self.language = Defaults[\.defaultLanguage]
         optionalDisposable =  Defaults.observe(\.swiftOptional, options: [.new,.old]) { (update) in
             guard let new = update.newValue,let old = update.oldValue else{return}
             if old != new{
@@ -80,10 +83,6 @@ class ContentViewModel: ObservableObject {
         }
     }
     
-    func conversionSwift(optional: SwiftOptional? = nil, type: SwiftModelType? = nil , attribute: SwiftAttribute? = nil){
-        
-    }
-    
     func conversion(){
         DispatchQueue.main.async {
             if self.inputText.count == 0 {
@@ -102,14 +101,14 @@ class ContentViewModel: ObservableObject {
                 self.outputText = s
             }
         }
-
+        
     }
 }
 
 struct ContentView: View {
     
     @StateObject var viewModel = ContentViewModel()
-        
+    
     var body: some View {
         VStack {
             GeometryReader.init { proxy in
@@ -120,12 +119,12 @@ struct ContentView: View {
                 HStack.init(alignment: .top, spacing: 0, content: {
                     VStack.init(alignment: .center, spacing: 0, content: {
                         Text(NSLocalizedString("Please enter the json text", comment: ""))
-//                            .foregroundColor(Color.secondary)
+                            //                            .foregroundColor(Color.secondary)
                             .padding(.all, 10)
                         EditorTextView.init(text: self.$viewModel.inputText, onCommit: {
                             self.viewModel.conversion()
                         }, onTextChange: { (_) in
-                            self.viewModel.format()
+                            //                            self.viewModel.format()
                         }, language: TextViewLanguage.json)
                         
                     }).frame(width: leftWidth, height: proxy.size.height, alignment: .top)
@@ -196,7 +195,7 @@ struct ContentView: View {
                     }.frame(width: centerWidth, height: proxy.size.height, alignment: .top)
                     
                     VStack.init(alignment: .center,spacing: 0, content: {
-                       
+                        
                         ZStack.init {
                             Text(NSLocalizedString("results", comment: ""))
                             HStack.init(alignment: .center, spacing: 0) {
@@ -211,16 +210,16 @@ struct ContentView: View {
                                         .resizable()
                                 }
                                 .buttonStyle(BorderlessButtonStyle())
-
+                                
                             }
                             .frame(width: rightWidth, height: nil, alignment: .trailing)
-
+                            
                         }
                         .padding(.all, 10)
-
+                        
                         EditorTextView.init(text: self.$viewModel.outputText,language: self.viewModel.textViewLanguage)
-                        .background(Color.white)
-                        .frame(width: nil, height: nil, alignment: .top)
+                            .background(Color.white)
+                            .frame(width: nil, height: nil, alignment: .top)
                         
                     })
                     .frame(width: rightWidth, height: proxy.size.height, alignment: .top)
@@ -253,6 +252,7 @@ struct ContentView_Previews: PreviewProvider {
  {
  "id": 3,
  "name": "音乐",
+ "x": 5,
  "img_url": "https://img.sumeme.com/18/2/1586055853842.png",
  "order": 6
  },
@@ -266,7 +266,8 @@ struct ContentView_Previews: PreviewProvider {
  "id": 5,
  "name": "舞蹈",
  "img_url": "https://img.sumeme.com/53/5/1586055830325.png",
- "order": 4
+ "order": 4,
+ "y":"d"
  },
  {
  "id": 7,

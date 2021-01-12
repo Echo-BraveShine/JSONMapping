@@ -58,11 +58,9 @@ extension NSTextView {
         }
         
         postsFrameChangedNotifications = true
-//        NotificationCenter.default.addObserver(self, selector: #selector(frameHasChange), name: NSView.frameDidChangeNotification, object: self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(textHasChange), name: NSTextView.didChangeTypingAttributesNotification, object: self)
         NotificationCenter.default.addObserver(self, selector: #selector(textHasChange), name: NSText.didEndEditingNotification, object: self)
-        NotificationCenter.default.addObserver(self, selector: #selector(textHasChange), name: NSText.didBeginEditingNotification, object: self)
 
         NotificationCenter.default.addObserver(self, selector: #selector(textHasChange), name: NSTextView.didChangeNotification, object: self)
 
