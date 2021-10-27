@@ -204,7 +204,7 @@ struct ContentView: View {
                                     
                                 } label: {
                                     Image.init("content_setting")
-                                        .resizable()
+//                                        .resizable()
                                 }
                                 .buttonStyle(BorderlessButtonStyle())
                                 
