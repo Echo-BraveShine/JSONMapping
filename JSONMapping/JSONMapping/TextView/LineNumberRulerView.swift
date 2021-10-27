@@ -75,7 +75,7 @@ extension NSTextView {
 
 class LineNumberRulerView: NSRulerView {
     
-    var font: NSFont = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
+    var font: NSFont = NSFont.systemFont(ofSize: 15)
     
     init(textView: NSTextView) {
         super.init(scrollView: textView.enclosingScrollView!, orientation: NSRulerView.Orientation.verticalRuler)
@@ -93,6 +93,9 @@ class LineNumberRulerView: NSRulerView {
     override func drawHashMarksAndLabels(in rect: NSRect) {
         
         if let textView = self.clientView as? NSTextView {
+            if let f = textView.font{
+                self.font = f
+            }
             if let layoutManager = textView.layoutManager {
                 
                 let relativePoint = self.convert(NSZeroPoint, from: textView)

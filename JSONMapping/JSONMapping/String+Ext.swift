@@ -280,3 +280,13 @@ extension String {
     return NSRange(self.startIndex ..< self.endIndex, in: self)
   }
 }
+
+extension String{
+    func format() -> String{
+        var errors: [JSONParseError] = []
+        if let s = self.pretifyJSONv2(format: 2, spaces: true, allowWeakJSON: true, errors: &errors){
+            return s
+        }
+        return self
+    }
+}

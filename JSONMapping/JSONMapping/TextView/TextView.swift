@@ -174,7 +174,7 @@ final class CustomTextView: NSView {
         layoutManager.addTextContainer(textContainer)
         
         
-        let textView                     = NSTextView(frame: .zero, textContainer: textContainer)
+        let textView                     = PlainTextView(frame: .zero, textContainer: textContainer)
         textView.autoresizingMask        = .width
         textView.backgroundColor         = NSColor.gridColor
         textView.delegate                = self.delegate
@@ -271,3 +271,9 @@ final class CustomTextView: NSView {
     }
 }
 
+
+class PlainTextView: NSTextView {
+    override func paste(_ sender: Any?) {
+        pasteAsPlainText(sender)
+    }
+}

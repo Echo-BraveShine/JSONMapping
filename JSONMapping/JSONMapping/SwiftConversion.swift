@@ -77,12 +77,10 @@ class SwiftConversion {
         
         var result : String = "\(type.rawValue) \(clsName) { \n"//"@interface \(name?.capitalized ?? "Object") : NSObject \n"
       
-        dict.keys.forEach { (str) in
-            if let value = dict[str]{
-                result += "\n"
-                result += conversionAny(value,str)
-                result += "\n"
-            }
+        dict.forEach { (key,value) in
+            result += "\n"
+            result += conversionAny(value,key)
+            result += "\n"
         }
         
         result += "\n}\n"

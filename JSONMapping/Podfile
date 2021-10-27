@@ -4,5 +4,4 @@ target 'JSONMapping' do
 
   pod 'Highlightr3'
   pod 'SwiftyUserDefaults'
-
 end

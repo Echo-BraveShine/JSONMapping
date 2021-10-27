@@ -77,10 +77,7 @@ class ContentViewModel: ObservableObject {
     }
     
     func format() {
-        var errors: [JSONParseError] = []
-        if let s = inputText.pretifyJSONv2(format: 2, spaces: true, allowWeakJSON: true, errors: &errors){
-            inputText = s
-        }
+        inputText = inputText.format()
     }
     
     func conversion(){
@@ -286,4 +283,7 @@ struct ContentView_Previews: PreviewProvider {
  */
 /*
  {"video":{"id":"29BA6ACE7A9427489C33DC5901307461","title":"体验课01","desp":"","tags":" ","duration":503,"category":"07AD1E11DBE6FDFC","image":"http://2.img.bokecc.com/comimage/0DD1F081022C163E/2016-03-09/29BA6ACE7A9427489C33DC5901307461-0.jpg","imageindex":0,"image-alternate":[{"index":0,"url":"http://2.img.bokecc.com/comimage/0DD1F081022C163E/2016-03-09/29BA6ACE7A9427489C33DC5901307461-0/0.jpg"},{"index":1,"url":"http://2.img.bokecc.com/comimage/0DD1F081022C163E/2016-03-09/29BA6ACE7A9427489C33DC5901307461-0/1.jpg"},{"index":2,"url":"http://2.img.bokecc.com/comimage/0DD1F081022C163E/2016-03-09/29BA6ACE7A9427489C33DC5901307461-0/2.jpg"},{"index":3,"url":"http://2.img.bokecc.com/comimage/0DD1F081022C163E/2016-03-09/29BA6ACE7A9427489C33DC5901307461-0/3.jpg"}]}}
+ 
+ 
+ {\"name\":\"cat\",\"id\":\"12345\",\"num\":180}
  */
